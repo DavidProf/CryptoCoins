@@ -36,7 +36,7 @@
         android:layout_below="@id/text_view_value_nome"
         android:layout_alignParentRight="true"
         android:layout_marginTop="20dp"
-        android:text="nome"
+        android:text="price"
         android:textSize="20sp" />
 
 </RelativeLayout>
