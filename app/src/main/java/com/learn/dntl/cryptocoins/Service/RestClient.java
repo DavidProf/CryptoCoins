@@ -1,4 +1,6 @@
-package com.learn.dntl.cryptocoins;
+package com.learn.dntl.cryptocoins.Service;
+
+import com.learn.dntl.cryptocoins.Service.APIService;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

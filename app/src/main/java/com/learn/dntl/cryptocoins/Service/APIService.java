@@ -1,4 +1,4 @@
-package com.learn.dntl.cryptocoins;
+package com.learn.dntl.cryptocoins.Service;
 
 import com.learn.dntl.cryptocoins.Model.CryptoCoin;
 
