@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">CryptoCoins</string>
+    <string name="crypto_coin">Crypto Coin:</string>
+    <string name="price">Price:</string>
+</resources>
