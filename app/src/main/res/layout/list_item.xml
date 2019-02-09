@@ -6,7 +6,7 @@
     android:padding="20dp">
 
     <TextView
-        android:id="@+id/text_view_nome"
+        android:id="@+id/text_view_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/crypto_coin"
@@ -16,24 +16,24 @@
         android:id="@+id/text_view_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/text_view_nome"
+        android:layout_below="@+id/text_view_name"
         android:layout_marginTop="20dp"
         android:text="@string/price"
         android:textSize="20sp" />
 
     <TextView
-        android:id="@+id/text_view_value_nome"
+        android:id="@+id/text_view_value_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:text="nome"
+        android:text="name"
         android:textSize="20sp" />
 
     <TextView
         android:id="@+id/text_view_value_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/text_view_value_nome"
+        android:layout_below="@id/text_view_value_name"
         android:layout_alignParentRight="true"
         android:layout_marginTop="20dp"
         android:text="price"
