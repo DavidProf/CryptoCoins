@@ -1,10 +1,11 @@
 package com.learn.dntl.cryptocoins.App;
 
+import android.util.Log;
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.learn.dntl.cryptocoins.Model.CryptoCoin;
@@ -44,7 +45,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<CryptoCoin>> call, Response<List<CryptoCoin>> response) {
                 cryptoCoins.addAll(response.body());
-                recyclerView.setAdapter(new RecyclerAdapter(cryptoCoins));
+                RecyclerAdapter adapter = new RecyclerAdapter(cryptoCoins);
+                recyclerView.setAdapter(adapter);
             }
 
             @Override
@@ -53,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Failure", Toast.LENGTH_SHORT).show();
             }
         });
+
         LinearLayoutManager linearLayout = new LinearLayoutManager(MainActivity.this);
         recyclerView.setLayoutManager(linearLayout);
     }
