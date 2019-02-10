@@ -45,8 +45,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<CryptoCoin>> call, Response<List<CryptoCoin>> response) {
                 cryptoCoins.addAll(response.body());
-                RecyclerAdapter adapter = new RecyclerAdapter(cryptoCoins);
-                recyclerView.setAdapter(adapter);
+                recyclerView.setAdapter(new RecyclerAdapter(cryptoCoins));
             }
 
             @Override
