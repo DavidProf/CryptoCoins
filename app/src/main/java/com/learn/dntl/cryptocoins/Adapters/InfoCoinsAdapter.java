@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.learn.dntl.cryptocoins.App.MainActivity;
 import com.learn.dntl.cryptocoins.Model.CryptoCoin;
 import com.learn.dntl.cryptocoins.R;
 
@@ -26,7 +27,7 @@ public class InfoCoinsAdapter extends RecyclerView.Adapter<InfoCoinsAdapter.View
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.list_item, viewGroup, false);
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.list_info_coins, viewGroup, false);
         return new ViewHolder(view);
     }
 
@@ -34,8 +35,13 @@ public class InfoCoinsAdapter extends RecyclerView.Adapter<InfoCoinsAdapter.View
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
         CryptoCoin cryptoCoin = cryptoCoins.get(i);
 
-        viewHolder.name.setText(cryptoCoin.getName());
-        viewHolder.price.setText(cryptoCoin.getPriceUsd());
+        if (MainActivity.userCryptoCoins.contains(cryptoCoin.getName().toUpperCase())) {
+            viewHolder.name.setText(cryptoCoin.getName());
+            viewHolder.price.setText(cryptoCoin.getPriceUsd());
+
+        } else {
+
+        }
     }
 
     @Override
