@@ -1,16 +1,17 @@
 package com.learn.dntl.cryptocoins.App;
 
-import android.util.Log;
-
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Menu;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
+import com.learn.dntl.cryptocoins.Adapters.InfoCoinsAdapter;
 import com.learn.dntl.cryptocoins.Model.CryptoCoin;
 import com.learn.dntl.cryptocoins.R;
-import com.learn.dntl.cryptocoins.RecyclerAdapter;
 import com.learn.dntl.cryptocoins.Service.APIService;
 import com.learn.dntl.cryptocoins.Service.RestClient;
 
@@ -19,6 +20,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -45,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<CryptoCoin>> call, Response<List<CryptoCoin>> response) {
                 cryptoCoins.addAll(response.body());
-                recyclerView.setAdapter(new RecyclerAdapter(cryptoCoins));
+                recyclerView.setAdapter(new InfoCoinsAdapter(cryptoCoins));
             }
 
             @Override
@@ -58,4 +60,5 @@ public class MainActivity extends AppCompatActivity {
         LinearLayoutManager linearLayout = new LinearLayoutManager(MainActivity.this);
         recyclerView.setLayoutManager(linearLayout);
     }
+
 }

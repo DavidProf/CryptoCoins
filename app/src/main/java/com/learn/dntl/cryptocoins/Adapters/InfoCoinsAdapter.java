@@ -1,4 +1,4 @@
-package com.learn.dntl.cryptocoins;
+package com.learn.dntl.cryptocoins.Adapters;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -8,17 +8,18 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.learn.dntl.cryptocoins.Model.CryptoCoin;
+import com.learn.dntl.cryptocoins.R;
 
 import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
+public class InfoCoinsAdapter extends RecyclerView.Adapter<InfoCoinsAdapter.ViewHolder> {
 
     ArrayList<CryptoCoin> cryptoCoins;
 
-    public RecyclerAdapter(ArrayList<CryptoCoin> cryptoCoins) {
+    public InfoCoinsAdapter(ArrayList<CryptoCoin> cryptoCoins) {
         this.cryptoCoins = cryptoCoins;
     }
 
