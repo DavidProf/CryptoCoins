@@ -40,7 +40,7 @@ public class InfoCoinsAdapter extends RecyclerView.Adapter<InfoCoinsAdapter.View
             viewHolder.price.setText(cryptoCoin.getPriceUsd());
 
         } else {
-
+//
         }
     }
 
