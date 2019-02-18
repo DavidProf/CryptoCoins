@@ -11,7 +11,7 @@ public class RestClient {
                 .baseUrl(APIService.URL_Base)//get's URL (from APIService.class)
                 .addConverterFactory(GsonConverterFactory.create())//i don't know, converts?
                 .build();//building
-        return retrofit.create(APIService.class);
 
+        return retrofit.create(APIService.class);
     }
 }

@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.learn.dntl.cryptocoins.App.MainActivity;
@@ -35,13 +36,17 @@ public class InfoCoinsAdapter extends RecyclerView.Adapter<InfoCoinsAdapter.View
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
         CryptoCoin cryptoCoin = cryptoCoins.get(i);
 
-        if (MainActivity.userCryptoCoins.contains(cryptoCoin.getName().toUpperCase())) {
-            viewHolder.name.setText(cryptoCoin.getName());
-            viewHolder.price.setText(cryptoCoin.getPriceUsd());
+        viewHolder.name.setText(cryptoCoin.getName());
+        viewHolder.price.setText(cryptoCoin.getPriceUsd());
 
-        } else {
-//
-        }
+        viewHolder.delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cryptoCoins.remove(i);
+                notifyDataSetChanged();
+            }
+        });
+
     }
 
     @Override
@@ -54,6 +59,8 @@ public class InfoCoinsAdapter extends RecyclerView.Adapter<InfoCoinsAdapter.View
         TextView name;
         @BindView(R.id.text_view_value_price)
         TextView price;
+        @BindView(R.id.button_delete)
+        Button delete;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);

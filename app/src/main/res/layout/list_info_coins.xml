@@ -39,10 +39,18 @@
         android:text="price"
         android:textSize="20sp" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_delete"
+        android:layout_below="@id/text_view_price"
+        android:text="@string/delete"/>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="#000"
-        android:layout_below="@+id/text_view_price"
-        android:layout_marginTop="10dp"/>
+        android:layout_below="@+id/button_delete"
+        android:layout_marginTop="10dp"
+        android:background="#000" />
+
 </RelativeLayout>
